@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Encrypt & Decrypt - Flask Asymmetric Encryption</title>
+    </head>
+    <body>
+        <center>
+            <h2>Encrypt and Decrypt</h2>
+            <button type="button" onclick="window.location.href = '/'">Go Back</button>
+            <form method="POST">
+                <br>
+                <h3>Encrypt: <span style="color: white;">......................................................................................</span>Decrypt: </h3>
+                <textarea name="PublicKey" id="PublicKey" style="width: 25%; height: 100px;" placeholder="Enter Public or Private Key here">{{PublicKey}}</textarea>
+                <textarea name="PrivateKey" id="PrivateKey" style="width: 25%; height: 100px;" placeholder="Enter Private Key here">{{PrivateKey}}</textarea>
+                <br>
+                <textarea name="RawText" id="RawText" style="width: 25%; height: 100px;" placeholder="Enter Raw text here">{{RawText}}</textarea>
+                <textarea name="EncryptedText" id="EncryptedText" style="width: 25%; height: 100px;" placeholder="Enter Encrypted text here">{{EncryptedText}}</textarea>
+                <br>
+                <textarea name="OUTEncryptedText" id="OUTEncryptedText" style="width: 25%; height: 100px;" placeholder="Your Encrypted text will appear here" readonly>{{OUTEncryptedText}}</textarea>
+                <textarea name="OUTDecryptedText" id="OUTDecryptedText" style="width: 25%; height: 100px;" placeholder="Your Decrypted text will appear here" readonly>{{OUTDecryptedText}}</textarea>
+                <br>
+                <button type="submit" name="Button" value="Encrypt" style="width: 25%;">Encrypt</button>
+                <span style="color: white;">..</span>
+                <button type="submit" name="Button" value="Decrypt" style="width: 25%;">Decrypt</button>
+            </form>
+        </center>
+    </body>
+</html>
