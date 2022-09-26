@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Generate Keys - Flask Asymmetric Encryption</title>
+    </head>
+    <body>
+        <center>
+            <h2>Generate Keys</h2>
+            <form method="POST">
+                <button type="submit" name="Button" value="Gen">
+                    Generate Keys
+                </button>
+                <br>
+                <button type="button" onclick="window.location.href = '/'">
+                    Go Back
+                </button>
+            </form>
+            <br>
+            {% if Status %}
+                <textarea name="PublicKey" id="PublicKey" style="width: 25%; height: 375px;" placeholder="Click Generate. Public Key will appear here" readonly>{{PublicKey}}</textarea>
+                <textarea name="PrivateKey" id="PrivateKey" style="width: 25%; height: 375px;" placeholder="Click Generate. Private Key will appear here" readonly>{{PrivateKey}}</textarea>
+            {% endif %}
+        </center>
+    </body>
+</html>
