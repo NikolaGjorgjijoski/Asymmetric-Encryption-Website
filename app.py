@@ -1,5 +1,5 @@
 from flask import *
-import main
+import AsymmetricEncryption as main
 
 app = Flask(__name__)
 
