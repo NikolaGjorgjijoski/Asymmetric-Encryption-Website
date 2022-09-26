@@ -1,16 +1,10 @@
 from flask import *
-import AsymmetricEncryption as main
+import main
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 def index():
-    if request.method == 'POST':
-        Button = request.form['Button']
-        if Button == 'Generate':
-            return redirect(url_for('generate'))
-        if Button == 'Encrypt&Decrypt':
-            return redirect(url_for('EncryptANDDecrypto'))
     return render_template('index.html')
 
 @app.route('/generate', methods=['GET', 'POST'])
@@ -22,16 +16,12 @@ def generate():
             PublicKey = main.Main.Generate_Public_Pem(Keys['Public Key'])['Public Pem']
             PrivateKey = main.Main.Generate_Private_Pem(Keys['Private Key'])['Private Pem']
             return render_template('generate.html', Status=True, PublicKey=PublicKey, PrivateKey=PrivateKey)
-        if Button == 'goBack':
-            return redirect(url_for('index'))
     return render_template('generate.html', Status=True)
 
 @app.route('/encrypt/and/decrypt', methods=['GET', 'POST'])
 def EncryptANDDecrypto():
     if request.method == 'POST':
         Button = request.form['Button']
-        if Button == 'GoBack':
-            return redirect(url_for('index'))
         if Button == 'Encrypt':
             PublicKey1 = request.form['PublicKey']
             RawText = request.form['RawText']
